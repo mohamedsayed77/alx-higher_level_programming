@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""square module."""
+"""Square module."""
 
 
 class square:
