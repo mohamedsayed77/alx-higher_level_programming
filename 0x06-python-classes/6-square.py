@@ -3,23 +3,22 @@
 
 
 class Square:
-    """Defines a square."""
-    def __init__(self, size=0):
-        """Constructor.
+    """Represent a square."""
+    def __init__(self, size=0, position=(0, 0)):
+        """Initialize a new square.
 
         Args:
-            size: length of a side of the square.
+            size (int): the size of the new square.
+            position (int, int): the position of the new square
         """
-        self.__size = size
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
-        """property for the length of a side of this square.
-        raises:
-            TypeError: If size is not an integer.
-            ValueEroor: If size is less than 0.
-            """
-        return self.__size
+        """Get/set the current size of the square."""
+
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -28,6 +27,20 @@ class Square:
         if value < 0:
             raise ValueError('size must be >= 0')
         self.__size = value
+
+    @property
+    def position(self):
+        """Get/set the current size of the square."""
+        return (self.__position)
+
+    @position.setter
+    def position(self, value):
+        if (not isinstance(value, tuple) or
+                len(value) != 2 or
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
+            raise TypeError("Position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def area(self):
         """Return the current area of the square."""
