@@ -3,9 +3,9 @@
 
 
 class Rectangle:
-    """Representation  of a rectangle"""
+    """Representation of a Rectangle"""
     def __init__(self, width=0, height=0):
-        """Initializes the rectangle"""
+        """Initializes the Rectangle"""
         self.height = height
         self.width = width
 
@@ -18,9 +18,9 @@ class Rectangle:
     def width(self, value):
         """setter for the private instance attribute width"""
         if type(value) is not int:
-            raise TypeError("Width must be an integer")
+            raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("Width must be >= 0")
+            raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
