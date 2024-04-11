@@ -57,8 +57,8 @@ class Rectangle:
 
     def __repr__(self):
         """returns a string representation of the rectangle for reproduction"""
-        return "Rectangle({:d}, {:d})".format(self.__width, self.height)
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """print a message for every deletion of a rectangle"""
+        """print a message for every deletion of a rectangle."""
         print("Bye rectangle...")
