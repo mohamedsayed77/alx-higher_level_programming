@@ -248,5 +248,6 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer(9.8)
 
+
 if __name__ == '__main__':
     unittest.main()
