@@ -6,16 +6,22 @@ if (process.argv.length <= 2) {
 } else if (process.argv.length === 3) {
   console.log(0);
 } else {
-
   const numbers = process.argv.slice(2).map(Number).filter(n => !isNaN(n));
+  let max = -Infinity;
+  let secondMax = -Infinity;
 
+  for (let num of numbers) {
+    if (num > max) {
+      secondMax = max;
+      max = num;
+    } else if (num > secondMax && num !== max) {
+      secondMax = num;
+    }
+  }
 
-  const sortedNumbers = numbers.sort((a, b) => b - a);
-
-  if (sortedNumbers.length < 2) {
+  if (secondMax === -Infinity) {
     console.log(0);
   } else {
-    console.log(sortedNumbers[1]);
+    console.log(secondMax);
   }
 }
-
