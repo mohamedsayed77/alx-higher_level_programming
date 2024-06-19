@@ -1,9 +1,20 @@
 #!/usr/bin/node
-// function that returns the number of occurrences in a list
+// Script to compute a dictionary of user ids by occurrence
 
-const originalList = require('./100-data').list;
-console.log(originalList);
-const mappedList = originalList.map(function (e, index) {
-  return (e * index);
-});
-console.log(mappedList);
+const occurrences = require('./101-data').dict;
+const usersByOccurrence = {};
+
+
+for (const userId in occurrences) {
+  const occurrence = occurrences[userId];
+  
+
+  if (!usersByOccurrence[occurrence]) {
+    usersByOccurrence[occurrence] = [];
+  }
+
+
+  usersByOccurrence[occurrence].push(userId);
+}
+
+console.log(usersByOccurrence);
